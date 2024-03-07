@@ -1,0 +1,142 @@
+import React, { useState } from "react";
+import JSZip from "jszip";
+import { saveAs } from "file-saver";
+import { Link } from "react-router-dom/cjs/react-router-dom";
+import { BiSolidDownload } from "react-icons/bi";
+import { Carousel, Button, Image, Row, Col, Container, Navbar } from "react-bootstrap";
+import Imagei from "../../images/1.png";
+import Imageii from "../../images/2.png";
+import Imageiii from "../../images/3.png";
+import "../../App.css"
+
+const RamzanCal = () => {
+  const [index, setIndex] = useState(0);
+  const images = [Imagei, Imageii, Imageiii];
+
+  const handleSelect = (selectedIndex, e) => {
+    setIndex(selectedIndex);
+  };
+
+  const nextSlide = () => {
+    setIndex((prevIndex) => (prevIndex + 1) % images.length);
+  };
+
+  const prevSlide = () => {
+    setIndex((prevIndex) =>
+      prevIndex === 0 ? images.length - 1 : prevIndex - 1
+    );
+  };
+
+  const downloadImages = () => {
+    const zip = new JSZip();
+    const folder = zip.folder("carousel_images");
+
+    // Array to store all fetch promises
+    const fetchPromises = [];
+
+    images.forEach((image, idx) => {
+      const promise = fetch(image)
+        .then((response) => response.blob())
+        .then((blob) => {
+          folder.file(`image_${idx + 1}.png`, blob);
+        });
+
+      fetchPromises.push(promise);
+    });
+
+    // Wait for all fetch promises to resolve
+    Promise.all(fetchPromises).then(() => {
+      // Generate and download the zip file
+      zip.generateAsync({ type: "blob" }).then((content) => {
+        saveAs(content, "carousel_images.zip");
+      });
+    });
+  };
+  return (
+    <>
+      <section className="quran-image pb-5">
+        <Container>
+          <Row>
+            <Col className="text-start">
+              <Link to="/">
+                <Button variant="primary">Go Back</Button>
+              </Link>
+            </Col>
+            <Col className="text-end">
+              <Button
+                variant="success"
+                className="fs-6"
+                onClick={downloadImages}
+              >
+                <BiSolidDownload className="d-md-none" />
+                <spa className="d-md-block d-none">Download Timetable</spa>
+              </Button>
+            </Col>
+          </Row>
+          <Row>
+            <Col md={{ span: 6, offset: 2 }}>
+              <div className="text-center mt-md-5">
+                <Carousel
+                  activeIndex={index}
+                  onSelect={handleSelect}
+                  controls={false}
+                >
+                  {images.map((image, idx) => (
+                    <Carousel.Item key={idx}>
+                      <Row>
+                        <Col md={{ span: 6, offset: 4 }}>
+                          <div
+                            style={{ maxHeight: "1000px", maxWidth: "600px" }}
+                          >
+                            <Image
+                              className="img-fluid"
+                              src={image}
+                              alt={`Slide ${idx}`}
+                            />
+                          </div>
+                        </Col>
+                      </Row>
+                    </Carousel.Item>
+                  ))}
+                </Carousel>
+                <Row>
+                  <Col md={{ span: 0, offset: 2 }}>
+                    <Button
+                      variant="primary"
+                      className="mt-md-4 mt-1"
+                      onClick={prevSlide}
+                    >
+                      Previous
+                    </Button>
+                  </Col>
+                  <Col>
+                    <Button
+                      variant="primary"
+                      className="mt-md-4 mt-1"
+                      onClick={nextSlide}
+                    >
+                      Next
+                    </Button>
+                  </Col>
+                </Row>
+              </div>
+            </Col>
+          </Row>
+        </Container>
+      </section>
+      <section>
+        <Navbar className="bg-dark bottom-0 position-fixed w-100">
+          <Container>
+            <Navbar.Collapse className="justify-content-center">
+              <Navbar.Text className="text-white">
+                &copy; 2024 Ramzan
+              </Navbar.Text>
+            </Navbar.Collapse>
+          </Container>
+        </Navbar>
+      </section>
+    </>
+  );
+};
+
+export default RamzanCal;

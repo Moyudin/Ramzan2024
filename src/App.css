@@ -1,0 +1,66 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
+
+/* For Header Component */
+.dancing-script{
+  font-family: "Dancing Script", cursive;
+  font-optical-sizing: auto;
+  font-weight: "900";
+  font-style: normal;
+}
+/* For Footer Component */
+.footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  color: white;
+  text-align: center;
+}
+
+/* For Home Component */
+@media screen and (min-width:769px){
+  .Home-Img{
+    background-image: url('./images/home.jpg');
+    background-size:cover;
+    height: 100vh;
+  }
+}
+@media screen and (max-width:768px){
+  .Home-Img{
+    background-image: url('./images/homei.jpg');
+    background-size:cover;
+    height: 100vh;
+  }
+}
+
+/* Glassmorphism.css */
+.glass-container-i {
+  background-color: rgba(255, 255, 255, 0.2); /* Adjust the opacity as needed */
+  backdrop-filter: blur(1px); /* Adjust the blur radius as needed */
+}
+.lobster-regular{
+  font-family: "Lobster", sans-serif;
+  font-weight: 400;
+  font-style: italic;
+}
+.glass-container-ii {
+  background-color: rgba(255, 255, 255, 0.2); /* Adjust the opacity as needed */
+  backdrop-filter: blur(10px); /* Adjust the blur radius as needed */
+}
+@media screen and (max-width:991px){
+  .title-t{
+    font-size: small;
+  }
+}
+
+/* QuranSharif.jsx */
+.quran-image{
+  background-image: url('./images/quran-bgi.png');
+  background-size:cover;
+}
+@media screen and (max-width:320px){
+  .margin-col{
+    margin-left: 8px;
+    margin-right: 8px;
+  }
+}
