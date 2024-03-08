@@ -79,7 +79,7 @@ const RamzanCal = () => {
                 <Carousel
                   activeIndex={index}
                   onSelect={handleSelect}
-                  controls={false}
+                  controls={true}
                 >
                   {images.map((image, idx) => (
                     <Carousel.Item key={idx}>

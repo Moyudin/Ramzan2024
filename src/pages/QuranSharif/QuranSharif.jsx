@@ -45,7 +45,7 @@ const Quransharif = () => {
                 placeholder="Enter Your Surah Name"
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
-              ></input>{" "}
+              ></input>
             </Col>
             <Row>
               {error && <p>An error occurred: {error.message}</p>}

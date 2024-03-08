@@ -40,13 +40,13 @@ const Header = () => {
               Home
             </Link>
             <hr />
-            <Link
+            {/* <Link
               to={"tasbi"}
               className="text-decoration-none text-black mx-3"
               onClick={handleLinkClick}
             >
-              Tasbi
-            </Link>
+              Ramzan Recipes
+            </Link> */}
           </Offcanvas>
         </Container>
       </Navbar>

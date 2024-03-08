@@ -9,7 +9,9 @@ import Home from "./pages/Home/Home";
 import Tasbi from "./pages/Tasbi/tasbi";
 import "./App.css";
 import Quransharif from "./pages/QuranSharif/QuranSharif";
+import SurahDetail from "./pages/QuranSharif/SurahDetail";
 import Cal from "./pages/RamzanCalendar/RamzanCalendar";
+import Azan from "./pages/Azaan/Azaan"
 import Footer from "./components/footer";
 
 function App() {
@@ -18,10 +20,12 @@ function App() {
       <Router>
         <Header />
         <Switch>
-          <Route exact path="/" component={Home}></Route>
-          <Route path="/tasbi" component={Tasbi}></Route>
-          <Route path="/quran" component={Quransharif}></Route>
-          <Route path="/Ramzan" component={Cal}></Route>
+          <Route exact path="/" component={Home}/>
+          <Route path="/tasbi" component={Tasbi}/>
+          <Route path="/quran" component={Quransharif}/>
+          <Route path="/surah/:surahNumber" component={SurahDetail} />
+          <Route path="/Ramzan" component={Cal}/>
+          <Route path="/Azaan" component={Azan}/>
         </Switch>
         {/* Render Footer only if the current route is not "/tasbi" */}
         <Route

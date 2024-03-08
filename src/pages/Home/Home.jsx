@@ -82,8 +82,8 @@ const Home = () => {
                   </Link>
                 </Col>
                 <Col md={4} className="my-2">
-                  <Link>
-                    <Card className="bg-info border-warning">More Updates</Card>
+                  <Link to="/Azaan">
+                    <Card className="bg-info border-warning">Azan</Card>
                   </Link>
                 </Col>
               </Row>
