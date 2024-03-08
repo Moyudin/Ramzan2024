@@ -1,16 +1,34 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import JSZip from "jszip";
 import { saveAs } from "file-saver";
 import { Link } from "react-router-dom/cjs/react-router-dom";
 import { BiSolidDownload } from "react-icons/bi";
-import { Carousel, Button, Image, Row, Col, Container, Navbar } from "react-bootstrap";
+import {
+  Carousel,
+  Button,
+  Image,
+  Row,
+  Col,
+  Container,
+  Navbar,
+} from "react-bootstrap";
+import { PulseLoader } from "react-spinners";
 import Imagei from "../../images/1.png";
 import Imageii from "../../images/2.png";
 import Imageiii from "../../images/3.png";
-import "../../App.css"
+import "../../App.css";
 
 const RamzanCal = () => {
   const [index, setIndex] = useState(0);
+  const [isLoadingi, setIsLoadingi] = useState(true);
+
+  useEffect(() => {
+    // Simulate a loading delay
+    setTimeout(() => {
+      setIsLoadingi(false);
+    }, 1000);
+  }, []);
+
   const images = [Imagei, Imageii, Imageiii];
 
   const handleSelect = (selectedIndex, e) => {
@@ -48,82 +66,92 @@ const RamzanCal = () => {
     Promise.all(fetchPromises).then(() => {
       // Generate and download the zip file
       zip.generateAsync({ type: "blob" }).then((content) => {
-        saveAs(content, "carousel_images.zip");
+        saveAs(content, "Ramzan_Timetable 2024.zip");
       });
     });
   };
+
   return (
     <>
-      <section className="quran-image pb-5">
-        <Container>
-          <Row>
-            <Col className="text-start">
-              <Link to="/">
-                <Button variant="primary">Go Back</Button>
-              </Link>
-            </Col>
-            <Col className="text-end">
-              <Button
-                variant="success"
-                className="fs-6"
-                onClick={downloadImages}
-              >
-                <BiSolidDownload className="d-md-none" />
-                <spa className="d-md-block d-none">Download Timetable</spa>
-              </Button>
-            </Col>
-          </Row>
-          <Row>
-            <Col md={{ span: 6, offset: 2 }}>
-              <div className="text-center mt-md-5">
-                <Carousel
-                  activeIndex={index}
-                  onSelect={handleSelect}
-                  controls={true}
+      {isLoadingi && (
+        <div className="text-center my-5">
+          <span className="text-primary">Loading</span>
+          <PulseLoader color="#007bff" loading={isLoadingi} size={15} />
+        </div>
+      )}
+      {!isLoadingi && (
+        <section className="quran-image pb-5">
+          <Container>
+            <Row>
+              <Col className="text-start mt-2">
+                <Link to="/">
+                  <Button variant="primary">Go Back</Button>
+                </Link>
+              </Col>
+              <Col className="text-end mt-2">
+                <Button
+                  variant="success"
+                  className="fs-6"
+                  onClick={downloadImages}
                 >
-                  {images.map((image, idx) => (
-                    <Carousel.Item key={idx}>
-                      <Row>
-                        <Col md={{ span: 6, offset: 4 }}>
-                          <div
-                            style={{ maxHeight: "1000px", maxWidth: "600px" }}
-                          >
-                            <Image
-                              className="img-fluid"
-                              src={image}
-                              alt={`Slide ${idx}`}
-                            />
-                          </div>
-                        </Col>
-                      </Row>
-                    </Carousel.Item>
-                  ))}
-                </Carousel>
-                <Row>
-                  <Col md={{ span: 0, offset: 2 }}>
-                    <Button
-                      variant="primary"
-                      className="mt-md-4 mt-1"
-                      onClick={prevSlide}
-                    >
-                      Previous
-                    </Button>
-                  </Col>
-                  <Col>
-                    <Button
-                      variant="primary"
-                      className="mt-md-4 mt-1"
-                      onClick={nextSlide}
-                    >
-                      Next
-                    </Button>
-                  </Col>
-                </Row>
-              </div>
-            </Col>
-          </Row>
-        </Container>
-      </section>
+                  <BiSolidDownload className="d-md-none" />
+                  <span className="d-md-block d-none">Download Timetable</span>
+                </Button>
+              </Col>
+            </Row>
+            <Row>
+              <Col md={{ span: 6, offset: 2 }}>
+                <div className="text-center mt-md-5 mt-3">
+                  <Carousel
+                    activeIndex={index}
+                    onSelect={handleSelect}
+                    controls={true}
+                  >
+                    {images.map((image, idx) => (
+                      <Carousel.Item key={idx}>
+                        <Row>
+                          <Col md={{ span: 6, offset: 4 }}>
+                            <div
+                              style={{ maxHeight: "1000px", maxWidth: "600px" }}
+                            >
+                              <Image
+                                className="img-fluid"
+                                src={image}
+                                alt={`Slide ${idx}`}
+                                rounded
+                              />
+                            </div>
+                          </Col>
+                        </Row>
+                      </Carousel.Item>
+                    ))}
+                  </Carousel>
+                  <Row>
+                    <Col md={{ span: 0, offset: 2 }}>
+                      <Button
+                        variant="danger"
+                        className="mt-md-4 mt-1"
+                        onClick={prevSlide}
+                      >
+                        Previous
+                      </Button>
+                    </Col>
+                    <Col>
+                      <Button
+                        variant="danger"
+                        className="mt-md-4 mt-1"
+                        onClick={nextSlide}
+                      >
+                        Next
+                      </Button>
+                    </Col>
+                  </Row>
+                </div>
+              </Col>
+            </Row>
+          </Container>
+        </section>
+      )}
       <section>
         <Navbar className="bg-dark bottom-0 position-fixed w-100">
           <Container>

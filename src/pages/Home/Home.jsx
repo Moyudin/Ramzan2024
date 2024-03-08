@@ -4,6 +4,7 @@ import { Link } from "react-router-dom/cjs/react-router-dom";
 import QuranSharif from "../../images/quran.png";
 import Tasbeeh from "../../images/tasbih.png";
 import Ramadan from "../../images/ramadan.png";
+import { CgMoreR } from "react-icons/cg";
 
 const Home = () => {
   return (
@@ -12,7 +13,7 @@ const Home = () => {
         <Container>
           <Row>
             <Col
-              className="glass-container-i p-4 p-lg-5"
+              className="glass-container-i p-4 border-0 p-lg-5"
               md={{ span: 7, offset: 4 }}
             >
               <h1 className="text-center text-white lobster-regular">
@@ -22,7 +23,7 @@ const Home = () => {
           </Row>
           <Row>
             <Col
-              className="glass-container-ii text-center"
+              className="glass-container-ii text-center border-0"
               md={{ span: 7, offset: 4 }}
             >
               {/* <div className="bg-light rounded-5 col-lg-10 offset-1"> */}
@@ -38,7 +39,7 @@ const Home = () => {
                         />
                       </div>
                       <Card.Body>
-                        <Card.Title className="text-decoration-none">
+                        <Card.Title className="title-t">
                           Quran Sharif
                         </Card.Title>
                       </Card.Body>
@@ -56,7 +57,7 @@ const Home = () => {
                         />
                       </div>
                       <Card.Body>
-                        <Card.Title>Tasbeeh</Card.Title>
+                        <Card.Title className="title-t">Tasbeeh</Card.Title>
                       </Card.Body>
                     </Card>
                   </Link>
@@ -81,9 +82,22 @@ const Home = () => {
                     </Card>
                   </Link>
                 </Col>
-                <Col md={4} className="my-2">
-                  <Link to="/Azaan">
-                    <Card className="bg-info border-warning">Azan</Card>
+                <Col md={4} className="my-2 mb-2">
+                  <Link to="/RamzanRecipe" className="text-decoration-none">
+                    <Card className="bg-info border-warning">
+                      <div className="text-center icon-container img-fluid">
+                        <CgMoreR
+                          style={{
+                            color: "#ff00ff",
+                          }}
+                          className="img-fluid mt-2"
+                          size={47}
+                        />
+                      </div>
+                      <Card.Body>
+                        <Card.Title className="title-t pb-lg-2">More</Card.Title>
+                      </Card.Body>
+                    </Card>
                   </Link>
                 </Col>
               </Row>
@@ -92,17 +106,6 @@ const Home = () => {
           </Row>
         </Container>
       </section>
-      {/* <section>
-        <Navbar className="bg-dark w-100">
-          <Container>
-            <Navbar.Collapse className="justify-content-center">
-              <Navbar.Text className="text-white">
-                &copy; 2024 Ramzan
-              </Navbar.Text>
-            </Navbar.Collapse>
-          </Container>
-        </Navbar>
-      </section> */}
     </>
   );
 };

@@ -29,11 +29,17 @@
   .Home-Img{
     background-image: url('./images/homei.jpg');
     background-size:cover;
-    height: 100vh;
   }
 }
+@media screen and (min-width:760) and (max-width:768) {
+  .Home-Img{
+    height: 107vh;
+  }  
+}
+.icon-container {
+  width: 100%; /* Ensure the icon fills its container */
+}
 
-/* Glassmorphism.css */
 .glass-container-i {
   background-color: rgba(255, 255, 255, 0.2); /* Adjust the opacity as needed */
   backdrop-filter: blur(1px); /* Adjust the blur radius as needed */
@@ -49,14 +55,24 @@
 }
 @media screen and (max-width:991px){
   .title-t{
-    font-size: small;
+    font-size: medium;
+    font-style: italic;
   }
+}
+
+/* tasbi.jsx */
+.tasbeeh-bg{
+  background-image: url('./images/tasbeeh.png');
+  background-size: cover;
+  min-height: 90vh;
+
 }
 
 /* QuranSharif.jsx */
 .quran-image{
   background-image: url('./images/quran-bgi.png');
   background-size:cover;
+  min-height: 100vh;
 }
 @media screen and (max-width:320px){
   .margin-col{

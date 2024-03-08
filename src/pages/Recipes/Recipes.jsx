@@ -2,7 +2,7 @@ import React from "react";
 import { Button } from "react-bootstrap";
 import { Link } from "react-router-dom/cjs/react-router-dom";
 
-const Azaan = () => {
+const Recipe = () => {
   
 
   return (
@@ -15,4 +15,4 @@ const Azaan = () => {
   );
 };
 
-export default Azaan;
+export default Recipe;

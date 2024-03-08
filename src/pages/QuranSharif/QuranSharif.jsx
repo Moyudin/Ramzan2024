@@ -2,6 +2,7 @@ import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { Button, Card, Col, Container, Row } from "react-bootstrap";
 import { Link } from "react-router-dom/cjs/react-router-dom";
+import { PulseLoader } from "react-spinners";
 
 const Quransharif = () => {
   const [data, setData] = useState(null);
@@ -21,6 +22,17 @@ const Quransharif = () => {
 
     fetchData();
   }, []);
+
+  if (!data) {
+    return (
+      <>
+        <div className="text-center my-5">
+          <span className="text-primary">Loading</span>
+          <PulseLoader color="#007bff" size={15} />
+        </div>
+      </>
+    );
+  }
 
   const filteredSurahs = data
     ? data.filter(
@@ -64,8 +76,10 @@ const Quransharif = () => {
                     >
                       <Card className="mt-3">
                         <Card.Body>
-                          <Card.Title>{surah.englishName}</Card.Title>
-                          <Card.Subtitle className="mb-2 text-muted">
+                          <Card.Title>
+                            {surah.number}&nbsp;{surah.englishName}
+                          </Card.Title>
+                          <Card.Subtitle className="mb-2 text-muted text-end">
                             {surah.name}
                           </Card.Subtitle>
                         </Card.Body>

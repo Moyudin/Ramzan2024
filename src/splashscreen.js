@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import App from "./App.js"; // Import your main app component
-import splashImage from "./images/Ramazan.png"; // Import your splash image
+import splashImage from "./images/spash.png"; // Import your splash image
 import "./App.css";
 
 function SplashScreen() {

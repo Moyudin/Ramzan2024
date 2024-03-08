@@ -11,8 +11,7 @@ import "./App.css";
 import Quransharif from "./pages/QuranSharif/QuranSharif";
 import SurahDetail from "./pages/QuranSharif/SurahDetail";
 import Cal from "./pages/RamzanCalendar/RamzanCalendar";
-import Azan from "./pages/Azaan/Azaan"
-import Footer from "./components/footer";
+import Recipe from "./pages/Recipes/Recipes"
 
 function App() {
   return (
@@ -25,16 +24,16 @@ function App() {
           <Route path="/quran" component={Quransharif}/>
           <Route path="/surah/:surahNumber" component={SurahDetail} />
           <Route path="/Ramzan" component={Cal}/>
-          <Route path="/Azaan" component={Azan}/>
+          <Route path="/RamzanRecipe" component={Recipe}/>
         </Switch>
-        {/* Render Footer only if the current route is not "/tasbi" */}
-        <Route
+        {/* <Route
           path="/"
           render={({ location }) =>
+          !location.pathname.includes("/") && 
             !location.pathname.includes("/tasbi") &&
             !location.pathname.includes("/Ramzan") && <Footer />
           }
-        />
+        /> */}
       </Router>
     </>
   );
