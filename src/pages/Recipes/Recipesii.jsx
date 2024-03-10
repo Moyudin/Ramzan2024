@@ -22,7 +22,7 @@ const RecipesStart = () => {
         <Row>
           <Col className="mt-2 mt-md-5">
             <div className="justify-content-center d-flex mt-3">
-              <div className="border border-info border-2 w-50 p-5">
+              <div className="border border-warning border-3 p-3 p-md-5">
                 <div className="text-center">
                   <h4 className="fst-italic ">For Suhur Recipes</h4>
                   <Link to="/SuhurRamzanRecipe">
@@ -34,9 +34,9 @@ const RecipesStart = () => {
           </Col>
           <Col className="mt-2 mt-md-5">
             <div className="justify-content-center d-flex mt-3">
-              <div className="border border-info border-2 w-50 p-5">
+              <div className="border border-warning border-3 p-3 p-md-5">
                 <div className="text-center">
-                  <h4 className="fst-italic">For Iftari Recipes</h4>
+                  <h4 className="fst-italic mobile-text">For Iftari Recipes</h4>
                   <Link to="/IftarRamzanRecipe">
                     <Button>Click</Button>
                   </Link>
@@ -46,6 +46,17 @@ const RecipesStart = () => {
           </Col>
         </Row>
       </Container>
+      <div className="fixed-bottom w-100">
+          <Row>
+            <Col className="text-center">
+              <Link to="/">
+                <Button className="mt-2 w-100 bg-black border-0">
+                  Go Back to Home Page
+                </Button>
+              </Link>
+            </Col>
+          </Row>
+      </div>
     </>
   );
 };

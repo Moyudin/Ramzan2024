@@ -32,7 +32,7 @@ const Home = () => {
               <Row className=" justify-content-center">
                 <Col md={4} className="my-2">
                   <Link className="text-decoration-none" to="/quran">
-                    <Card className="bg-info border-warning">
+                    <Card className="bg-info hover-card border-warning">
                       <div className="text-center mt-2">
                         <Card.Img
                           variant="top"
@@ -50,7 +50,7 @@ const Home = () => {
                 </Col>
                 <Col md={4} className="my-2">
                   <Link to="/tasbi" className="text-decoration-none">
-                    <Card className="bg-info border-warning">
+                    <Card className="bg-info border-warning hover-card">
                       <div className="text-center mt-2">
                         <Card.Img
                           variant="top"
@@ -68,7 +68,7 @@ const Home = () => {
               <Row className="justify-content-center">
                 <Col md={4} className="my-2">
                   <Link to="/Ramzan" className="text-decoration-none">
-                    <Card className="bg-info border-warning">
+                    <Card className="bg-info border-warning hover-card">
                       <div className="text-center mt-2">
                         <Card.Img
                           variant="top"
@@ -86,7 +86,7 @@ const Home = () => {
                 </Col>
                 <Col md={4} className="my-2 mb-2">
                   <Link to="/RamzanRecipes" className="text-decoration-none">
-                    <Card className="bg-info border-warning">
+                    <Card className="bg-info border-warning hover-card">
                       <div className="text-center icon-container img-fluid">
                         <CgMoreR
                           style={{

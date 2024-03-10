@@ -59,7 +59,12 @@
     font-style: italic;
   }
 }
-
+@media screen and (min-width:991px){ 
+  .hover-card:hover{
+    transform: scale(1.1);
+    transition:transform 1.5s;
+  }
+}
 /* tasbi.jsx */
 .tasbeeh-bg{
   background-image: url('./images/tasbeeh.png');

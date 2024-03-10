@@ -36,31 +36,31 @@ const IftarDetail = () => {
     );
   }
 
-//   let instructionPoints = [];
+  let instructionPoints = [];
 
-//   // Check if instructions is an array
-//   if (Array.isArray(recipe.instructions)) {
-//     instructionPoints = recipe.instructions.map((instruction, index) => (
-//       <li key={index}>{instruction}</li>
-//     ));
-//   } else if (typeof recipe.instructions === "string") {
-//     // Split instructions into separate points
-//     instructionPoints = recipe.instructions
-//       .split("\n")
-//       .filter((point) => point.trim() !== "")
-//       .map((point, index) => <li key={index}>{point}</li>);
-//   } else {
-//     // Handle other data types
-//     instructionPoints = <li>{recipe.instructions}</li>;
-//   }
+  // Check if instructions is an array
+  if (Array.isArray(recipes.instructions)) {
+    instructionPoints = recipes.instructions.map((instruction, index) => (
+      <li key={index}>{instruction}</li>
+    ));
+  } else if (typeof recipes.instructions === "string") {
+    // Split instructions into separate points
+    instructionPoints = recipes.instructions
+      .split("\n")
+      .filter((point) => point.trim() !== "")
+      .map((point, index) => <li key={index}>{point}</li>);
+  } else {
+    // Handle other data types
+    instructionPoints = <li>{recipes.instructions}</li>;
+  }
 
   return (
     <>
       <RecipeHeader />
       <Container>
-      <Link to="/IftarRamzanRecipe">
-        <Button className="mt-2">Go Back</Button>
-      </Link>
+        <Link to="/IftarRamzanRecipe">
+          <Button className="mt-2">Go Back</Button>
+        </Link>
         <Row>
           <Col md={4} className="mt-5">
             <Image
@@ -69,23 +69,17 @@ const IftarDetail = () => {
               className="img-fluid"
             />
           </Col>
-          {/* <Col md={8} className="mt-5">
+          <Col md={8} className="mt-5">
             <h1>{recipes.recipe_name}</h1>
+            <p><span className="fw-bold">Cuisine Type:</span> {recipes.cuisine}</p>
+            <p><span className="fw-bold">Serving:</span> {recipes.servings}</p>
             <p className="mt-1">
-              <span className="fw-bold">Ingredients:</span> {recipe.ingredients}
+              <span className="fw-bold">Ingredients:</span>
+              {recipes.ingredients}
             </p>
-            <p>
-              <span className="fw-bold">Instructions:</span>
-              <ul>
-                {instructionPoints.map((point, index) => (
-                  <li key={index}>{point}</li>
-                ))}
-              </ul>
-            </p>
-            <p className="text-danger" style={{ fontSize: "85%" }}>
-              (Tips: {recipe.tips})
-            </p>
-          </Col> */}
+            <span className="fw-bold">Instructions:</span>
+            <ul>{instructionPoints}</ul>
+          </Col>
         </Row>
       </Container>
     </>

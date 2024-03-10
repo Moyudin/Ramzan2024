@@ -56,6 +56,7 @@ const Quransharif = () => {
             </Col>
             <Col className="text-end my-1 mt-2 my-md-2">
               <input
+              className="nice-input"
                 placeholder="Enter Your Surah Name"
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
