@@ -62,14 +62,14 @@ const RecipeSuhurDetail = () => {
         <Button className="mt-2">Go Back</Button>
       </Link>
         <Row>
-          <Col md={4} className="mt-5">
+          <Col md={4} className="mt-md-5 mt-3 text-center">
             <Image
               src={recipe.image_url}
               alt={recipe.recipe_name}
               className="img-fluid"
             />
           </Col>
-          <Col md={8} className="mt-5">
+          <Col md={8} className="mt-md-5 mt-3 custom-mx-2">
             <h1>{recipe.recipe_name}</h1>
             <p className="mt-1">
               <span className="fw-bold">Ingredients:</span> {recipe.ingredients}

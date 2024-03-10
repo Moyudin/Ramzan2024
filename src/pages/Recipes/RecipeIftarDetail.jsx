@@ -5,6 +5,7 @@ import { PulseLoader } from "react-spinners";
 import { Button, Col, Container, Image, Row } from "react-bootstrap";
 import RecipeHeader from "../../components/recipeheader";
 import { Link } from "react-router-dom/cjs/react-router-dom";
+import "../../App.css"
 
 const IftarDetail = () => {
   const { id } = useParams(); // Get the id from URL parameters
@@ -62,14 +63,14 @@ const IftarDetail = () => {
           <Button className="mt-2">Go Back</Button>
         </Link>
         <Row>
-          <Col md={4} className="mt-5">
+          <Col md={4} className="mt-md-5 mt-3 text-center">
             <Image
               src={recipes.image_urls}
               alt={recipes.recipe_name}
               className="img-fluid"
             />
           </Col>
-          <Col md={8} className="mt-5">
+          <Col md={8} className="mt-md-5 mt-3 custom-mx-2">
             <h1>{recipes.recipe_name}</h1>
             <p><span className="fw-bold">Cuisine Type:</span> {recipes.cuisine}</p>
             <p><span className="fw-bold">Serving:</span> {recipes.servings}</p>

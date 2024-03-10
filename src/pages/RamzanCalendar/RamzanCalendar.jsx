@@ -102,7 +102,17 @@ const RamzanCal = () => {
               </Col>
             </Row>
             <Row>
-              <Col md={{ span: 6, offset: 2 }}>
+              <Col>
+                <div className="mt-md-5 mt-2 d-flex justify-content-center">
+                  <h3 className="text-end">دُعَاءُ افطار</h3></div>
+                  <div className="d-flex justify-content-center">
+                  <p className="text-end">اللهُمَّ إِنِّي لَكَ صُمْتُ وَ بِكَ آمَنْتُ وَعَلَيْكَ تَوَكَّلْتُ وَعَلَى رِزْقِكَ اَفْطَرْتُ</p>
+                  </div>
+                
+              </Col>
+            </Row>
+            <Row>
+              <Col md={{span:5 , offset:3}}>
                 <div className="text-center mt-md-5 mt-3">
                   <Carousel
                     activeIndex={index}
@@ -112,7 +122,7 @@ const RamzanCal = () => {
                     {images.map((image, idx) => (
                       <Carousel.Item key={idx}>
                         <Row>
-                          <Col md={{ span: 6, offset: 4 }}>
+                          <Col md={{ span: 8, offset:3 }}>
                             <div
                               style={{ maxHeight: "1000px", maxWidth: "600px" }}
                             >
@@ -155,7 +165,7 @@ const RamzanCal = () => {
         </section>
       )}
       <section>
-        <Navbar className="bg-dark bottom-0 position-fixed w-100">
+        <Navbar className="bg-dark bottom-0 w-100">
           <Container>
             <Navbar.Collapse className="justify-content-center">
               <Navbar.Text className="text-white">
