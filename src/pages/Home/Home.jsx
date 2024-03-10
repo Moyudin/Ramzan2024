@@ -1,4 +1,5 @@
 import React from "react";
+import Header from "../../components/header";
 import { Card, Col, Container, Row } from "react-bootstrap";
 import { Link } from "react-router-dom/cjs/react-router-dom";
 import QuranSharif from "../../images/quran.png";
@@ -9,6 +10,7 @@ import { CgMoreR } from "react-icons/cg";
 const Home = () => {
   return (
     <>
+      <Header />
       <section className="Home-Img">
         <Container>
           <Row>
@@ -83,7 +85,7 @@ const Home = () => {
                   </Link>
                 </Col>
                 <Col md={4} className="my-2 mb-2">
-                  <Link to="/RamzanRecipe" className="text-decoration-none">
+                  <Link to="/RamzanRecipes" className="text-decoration-none">
                     <Card className="bg-info border-warning">
                       <div className="text-center icon-container img-fluid">
                         <CgMoreR
@@ -95,7 +97,9 @@ const Home = () => {
                         />
                       </div>
                       <Card.Body>
-                        <Card.Title className="title-t pb-lg-2">More</Card.Title>
+                        <Card.Title className="title-t pb-lg-2">
+                          More
+                        </Card.Title>
                       </Card.Body>
                     </Card>
                   </Link>

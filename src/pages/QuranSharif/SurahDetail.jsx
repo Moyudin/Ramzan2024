@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import axios from "axios";
+import Header from "../../components/header";
 import { Button, Col, Container, Row } from "react-bootstrap";
 import { Link } from "react-router-dom/cjs/react-router-dom.min";
 import { PulseLoader } from "react-spinners";
@@ -43,6 +44,7 @@ const SurahDetail = () => {
 
   return (
     <>
+    <Header/>
       <section className="quran-image">
         <Container>
           <Row>

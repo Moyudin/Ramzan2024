@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import JSZip from "jszip";
 import { saveAs } from "file-saver";
+import Header from "../../components/header";
 import { Link } from "react-router-dom/cjs/react-router-dom";
 import { BiSolidDownload } from "react-icons/bi";
 import {
@@ -73,6 +74,7 @@ const RamzanCal = () => {
 
   return (
     <>
+    <Header/>
       {isLoadingi && (
         <div className="text-center my-5">
           <span className="text-primary">Loading</span>

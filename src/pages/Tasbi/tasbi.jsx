@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import Header from "../../components/header";
 import { Button, Card, Col, Container, Navbar, Row } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import { PulseLoader } from "react-spinners";
@@ -33,6 +34,7 @@ function Tasbi() {
 
   return (
     <>
+    <Header/>
       <section className="tasbeeh-bg">
         <section className="d-flex justify-content-center align-items-center mb-5">
           <Container>
