@@ -24,7 +24,6 @@ const RecipeSuhur = () => {
     fetchData();
   }, []);
 
-
   if (!data) {
     return (
       <>
@@ -76,6 +75,9 @@ const RecipeSuhur = () => {
                   </div>
                   <Card.Body>
                     <Card.Title>{item.recipe_name}</Card.Title>
+                    <Link to={`/recipe/${item.id}`}>
+                      <Button className="btn-sm bg-danger border-danger">View Recipe</Button>
+                    </Link>
                   </Card.Body>
                 </Card>
               </Link>

@@ -23,7 +23,6 @@ const RecipeIftar = () => {
 
     fetchData();
   }, []);
-  
 
   if (!data) {
     return (
@@ -76,6 +75,11 @@ const RecipeIftar = () => {
                   </div>
                   <Card.Body>
                     <Card.Title>{item.recipe_name}</Card.Title>
+                    <Link to={`/recipes/${item.id}`}>
+                      <Button className="btn-sm bg-danger border-danger">
+                        View Recipe
+                      </Button>
+                    </Link>
                   </Card.Body>
                 </Card>
               </Link>
