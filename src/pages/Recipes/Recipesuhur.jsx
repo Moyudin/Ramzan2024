@@ -62,7 +62,7 @@ const RecipeSuhur = () => {
         <Row>
           {filteredSuhur.map((item, index) => (
             <Col key={item.id || index} sm={6} md={4} lg={3}>
-              <Link to={`/recipes/${item.id}`} className="text-decoration-none">
+              <Link to={`/recipe/${item.id}`} className="text-decoration-none">
                 <Card
                   className="mt-4"
                   style={{ height: "25rem", cursor: "pointer" }}
