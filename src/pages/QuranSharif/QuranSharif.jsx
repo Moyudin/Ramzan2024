@@ -13,7 +13,7 @@ const Quransharif = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get(process.env.REACT_APP_API_URL);
+        const response = await axios.get("https://api.alquran.cloud/v1/quran/ar.alafasy");
         setData(response.data.data.surahs);
         console.log(response.data.data.surahs);
       } catch (error) {
