@@ -25,7 +25,7 @@ const Home = () => {
           </Row>
           <Row>
             <Col
-              className="glass-container-ii text-center border-0"
+              className="glass-container-ii text-center border-0 pb-3"
               md={{ span: 7, offset: 4 }}
             >
               {/* <div className="bg-light rounded-5 col-lg-10 offset-1"> */}
