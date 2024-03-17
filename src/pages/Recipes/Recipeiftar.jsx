@@ -49,9 +49,9 @@ const RecipeIftar = () => {
       <RecipeHeader />
       <Container>
         <Row>
-          <Col className="text-start my-1 my-md-2">
+          <Col className="text-start my-1 mt-2 my-md-2">
             <Link to="/RamzanRecipes">
-              <Button variant="primary">Go Back</Button>
+              <Button variant="primary btn-sm p-2 text-fs">Go Back</Button>
             </Link>
           </Col>
           <Col className="text-end my-1 mt-2 my-md-2">
@@ -63,12 +63,13 @@ const RecipeIftar = () => {
             ></input>
           </Col>
         </Row>
-        <Row>
+        <Row className="pb-3">
           {filteredIftar.map((item, index) => (
             <Col key={item.id || index} sm={6} md={4} lg={3}>
               <Card
                 className="mt-4 hover-cards"
                 style={{
+                  boxShadow: "0 4px 8px rgba(0,0,0,0.5)",
                   height: "25rem",
                   maxWidth: "20rem",
                   cursor: "pointer",

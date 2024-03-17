@@ -39,7 +39,7 @@ function Tasbi() {
         <section className="d-flex justify-content-center align-items-center mb-5">
           <Container>
             <Link to="/">
-              <Button className="mt-2 primary">Go Back</Button>
+              <Button className="mt-2 primary btn-sm p-2 text-fs">Go Back</Button>
             </Link>
             <Row className="justify-content-center">
               <Card

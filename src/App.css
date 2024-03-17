@@ -70,7 +70,6 @@
   background-image: url('./images/tasbeeh.png');
   background-size: cover;
   min-height: 90vh;
-
 }
 
 /* QuranSharif.jsx */
@@ -116,7 +115,7 @@
 /* For suhur and iftar page */
 @media screen and (min-width:991px){ 
   .hover-cards:hover{
-    transform: scale(1.08);
+    transform: scale(1.05);
     transition:transform 0.9s;
   }
 }

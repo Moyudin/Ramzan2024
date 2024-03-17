@@ -87,7 +87,7 @@ const RamzanCal = () => {
             <Row>
               <Col className="text-start mt-2">
                 <Link to="/">
-                  <Button variant="primary">Go Back</Button>
+                  <Button variant="primary btn-sm p-2 text-fs">Go Back</Button>
                 </Link>
               </Col>
               <Col className="text-end mt-2">

@@ -47,9 +47,9 @@ const SurahDetail = () => {
       <section className="quran-image">
         <Container>
           <Row>
-            <Col className="text-start my-1 my-md-2">
+            <Col className="text-start my-1 mt-2 my-md-2">
               <Link to="/quran">
-                <Button variant="primary">Go Back</Button>
+                <Button variant="primary btn-sm p-2 text-fs">Go Back</Button>
               </Link>
             </Col>
           </Row>

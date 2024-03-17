@@ -54,7 +54,7 @@ const RecipesStart = () => {
       </section>
       <div className="fixed-bottom w-100">
         <Row>
-          <Col className="text-center">
+          <Col sm={12} className="text-center">
             <Link to="/">
               <Button className="mt-2 w-100 bg-black border-0">
                 Go Back to Home Page

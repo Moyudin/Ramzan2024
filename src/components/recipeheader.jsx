@@ -43,6 +43,14 @@ const RecipeHeader = () => {
                 Home
               </Link>
               <hr />
+              <Link
+                to={"/RamzanRecipes"}
+                className="text-decoration-none text-black mx-3"
+                onClick={handleLinkClick}
+              >
+                Ramzan Recipes
+              </Link>
+              <hr/>
               {/* <Link
               to={"tasbi"}
               className="text-decoration-none text-black mx-3"
