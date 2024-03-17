@@ -40,7 +40,7 @@ const RecipesStart = () => {
                 <div className="border border-warning border-3 p-3 p-md-5 hover-cards">
                   <div className="text-center">
                     <h4 className="fst-italic mobile-text">
-                      For Iftare Recipes
+                      For Iftari Recipes
                     </h4>
                     <Link to="/IftarRamzanRecipe">
                       <Button className="text-fs">Click</Button>
