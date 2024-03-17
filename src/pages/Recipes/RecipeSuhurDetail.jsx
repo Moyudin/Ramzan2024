@@ -58,9 +58,9 @@ const RecipeSuhurDetail = () => {
     <>
       <RecipeHeader />
       <Container>
-      <Link to="/SuhurRamzanRecipe">
-        <Button className="mt-2">Go Back</Button>
-      </Link>
+        <Link to="/SuhurRamzanRecipe">
+          <Button className="mt-2">Go Back</Button>
+        </Link>
         <Row>
           <Col md={4} className="mt-md-5 mt-3 text-center">
             <Image

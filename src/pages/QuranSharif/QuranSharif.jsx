@@ -13,9 +13,10 @@ const Quransharif = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get("https://api.alquran.cloud/v1/quran/ar.alafasy");
+        const response = await axios.get(
+          "https://api.alquran.cloud/v1/quran/ar.alafasy"
+        );
         setData(response.data.data.surahs);
-        console.log(response.data.data.surahs);
       } catch (error) {
         setError(error);
       }
@@ -45,7 +46,7 @@ const Quransharif = () => {
 
   return (
     <>
-    <Header/>
+      <Header />
       <section className="quran-image">
         <Container>
           <Row>
@@ -56,7 +57,7 @@ const Quransharif = () => {
             </Col>
             <Col className="text-end my-1 mt-2 my-md-2">
               <input
-              className="nice-input"
+                className="nice-input"
                 placeholder="Enter Your Surah Name"
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}

@@ -104,3 +104,24 @@
     margin-right: 0.5rem;
   }
 }
+/* For Recipeii page */
+
+@media screen and (max-width:550px) {
+  .mobile-text{
+    font-size: medium;
+  }
+}
+
+
+/* For suhur and iftar page */
+@media screen and (min-width:991px){ 
+  .hover-cards:hover{
+    transform: scale(1.08);
+    transition:transform 0.9s;
+  }
+}
+@media screen and (max-width:335.99px){
+  .text-fs{
+    font-size: small;
+  }
+}

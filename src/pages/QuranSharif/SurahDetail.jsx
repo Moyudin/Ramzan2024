@@ -18,7 +18,6 @@ const SurahDetail = () => {
           `https://api.alquran.cloud/v1/surah/${surahNumber}`
         );
         setSurahData(response.data.data.ayahs);
-        console.log(response.data.data.ayahs);
       } catch (error) {
         setError(error);
       }
@@ -44,7 +43,7 @@ const SurahDetail = () => {
 
   return (
     <>
-    <Header/>
+      <Header />
       <section className="quran-image">
         <Container>
           <Row>

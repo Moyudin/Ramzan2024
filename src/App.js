@@ -6,7 +6,7 @@ import "./App.css";
 import Quransharif from "./pages/QuranSharif/QuranSharif";
 import SurahDetail from "./pages/QuranSharif/SurahDetail";
 import Cal from "./pages/RamzanCalendar/RamzanCalendar";
-import Recipes from "./pages/Recipes/Recipesii";
+import Recipes from "./pages/Recipes/Recipesmain";
 import SuhurRecipe from "./pages/Recipes/Recipesuhur";
 import RecipeSuhurDetail from "./pages/Recipes/RecipeSuhurDetail";
 import IftarRecipe from "./pages/Recipes/Recipeiftar";

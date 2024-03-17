@@ -32,7 +32,7 @@ const Home = () => {
               <Row className=" justify-content-center">
                 <Col md={4} className="my-2">
                   <Link className="text-decoration-none" to="/quran">
-                    <Card className="bg-info hover-card border-warning">
+                    <Card className="bg-info hover-card  border-warning">
                       <div className="text-center mt-2">
                         <Card.Img
                           variant="top"

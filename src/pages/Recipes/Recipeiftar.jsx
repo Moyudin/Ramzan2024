@@ -4,10 +4,12 @@ import axios from "axios";
 import { Button, Card, Col, Container, Image, Row } from "react-bootstrap";
 import { PulseLoader } from "react-spinners";
 import RecipeHeader from "../../components/recipeheader";
+import "../../App.css";
 
 const RecipeIftar = () => {
   const [data, setData] = useState([]);
   const [searchTerm, setSearchTerm] = useState("");
+  const [loading, setLoading] = useState(true); // Add loading state
 
   useEffect(() => {
     const fetchData = async () => {
@@ -16,15 +18,18 @@ const RecipeIftar = () => {
           "https://backend-recipes-0in7.onrender.com/api/recipes"
         );
         setData(response.data);
+        setLoading(false); // Set loading to false once data is fetched
       } catch (error) {
         console.error("Error fetching data:", error);
+        setLoading(false); // Set loading to false even if there's an error
       }
     };
 
     fetchData();
   }, []);
 
-  if (!data) {
+  if (loading) {
+    // Show loader if loading is true
     return (
       <>
         <div className="text-center my-5">
@@ -61,10 +66,17 @@ const RecipeIftar = () => {
         <Row>
           {filteredIftar.map((item, index) => (
             <Col key={item.id || index} sm={6} md={4} lg={3}>
-              <Link to={`/recipes/${item.id}`} className="text-decoration-none">
-                <Card
-                  className="mt-4"
-                  style={{ height: "25rem", cursor: "pointer" }}
+              <Card
+                className="mt-4 hover-cards"
+                style={{
+                  height: "25rem",
+                  maxWidth: "20rem",
+                  cursor: "pointer",
+                }}
+              >
+                <Link
+                  to={`/recipes/${item.id}`}
+                  className="text-decoration-none text-black"
                 >
                   <div className="img-fluid">
                     <Image
@@ -75,14 +87,17 @@ const RecipeIftar = () => {
                   </div>
                   <Card.Body>
                     <Card.Title>{item.recipe_name}</Card.Title>
-                    <Link to={`/recipes/${item.id}`}>
-                      <Button className="btn-sm bg-danger border-danger">
+                    <Button className="btn-sm bg-danger border-danger">
+                      <Link
+                        to={`/recipes/${item.id}`}
+                        className="text-decoration-none text-white"
+                      >
                         View Recipe
-                      </Button>
-                    </Link>
+                      </Link>
+                    </Button>
                   </Card.Body>
-                </Card>
-              </Link>
+                </Link>
+              </Card>
             </Col>
           ))}
         </Row>
