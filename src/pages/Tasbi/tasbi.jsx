@@ -83,7 +83,7 @@ function Tasbi() {
             <Container>
               <Navbar.Collapse className="justify-content-center">
                 <Navbar.Text className="text-white">
-                  &copy; 2024 Ramzan
+                  &copy; 2025 Ramzan
                 </Navbar.Text>
               </Navbar.Collapse>
             </Container>
