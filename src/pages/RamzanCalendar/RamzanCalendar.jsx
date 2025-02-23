@@ -14,8 +14,8 @@ import {
   Navbar,
 } from "react-bootstrap";
 import { PulseLoader } from "react-spinners";
-import Imagei from "../../images/1.png";
-import Imageii from "../../images/2.png";
+import Imagei from "../../images/4.png";
+import Imageii from "../../images/5.png";
 import Imageiii from "../../images/3.png";
 import "../../App.css";
 
